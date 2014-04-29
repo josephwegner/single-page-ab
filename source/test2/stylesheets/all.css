@@ -1,0 +1,27 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #62ab1b;
+}
+
+#innards {
+  background: url("../images/logo.png") center center no-repeat;
+  height: 100%;
+  width: 100%;
+  -webkit-transform: rotateZ(90deg);
+  -moz-transform: rotateZ(90deg);
+  -o-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+
+p {
+  color: white;
+  text-align: center;
+  font-size: 36px;
+  position: relative;
+  bottom: 100%;
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html class="no-js" id="ng-app">
+  <head>
+    <script type="text/javascript">
+      function getCookie(e){var t="; "+document.cookie;var n=t.split("; "+e+"=");if(n.length==2)return n.pop().split(";").shift()}
+      var variants = [
+        <% data.tests.test.each do |t| %>
+          "<%= t %>",
+        <% end %>
+      ];
+
+      variant = getCookie("belly_variant");
+
+      if(typeof(variant) === "undefined") {
+        variant = variants[Math.floor(Math.random() * variants.length)];
+        document.cookie = "belly_variant="+variant;
+      }
+
+      var scr = document.createElement("script")
+      scr.src = "/"+variant+"/javascripts/all.js";
+      scr.type = "text/javascript";
+
+      var link = document.createElement("link");
+      link.type = "text/css";
+      link.rel = "stylesheet"
+      link.href = "/"+variant+"/stylesheets/all.css";
+
+      document.head.appendChild(scr);
+      document.head.appendChild(link);
+
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+  </body>
+</html>
